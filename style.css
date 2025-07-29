@@ -498,6 +498,10 @@ body.loading-complete .vertical-tabs{
   .ellipses-container .greeting{
     margin-left: 40%;
   }
+
+  .coords{
+    display: none;
+  }
   
 }
   
