@@ -464,6 +464,8 @@ body.loading-complete .vertical-tabs{
   left: -11.5rem;
 }
 
+
+
 .ellipses-container {
   width: 80vw;
   height: 80vw;
@@ -472,8 +474,8 @@ body.loading-complete .vertical-tabs{
   border-radius: 50%;
   margin: 0 auto;
   position: relative;
-  margin-top: 10vh; /* or clamp(4rem, 10vh, 8rem) */
-
+  margin-top:clamp(4rem, 10vh, 8rem)
+  
 }
 
 .ellipses-container .greeting {
@@ -488,7 +490,16 @@ body.loading-complete .vertical-tabs{
     opacity: 0.5;
     text-align: center;
     white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
   }
+
+@media (max-width: 650px) {
+  .ellipses-container .greeting{
+    margin-left: 40%;
+  }
+  
+}
   
 
 .ellipses-container .greeting:after {
