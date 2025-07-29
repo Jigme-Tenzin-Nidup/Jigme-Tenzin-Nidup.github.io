@@ -48,6 +48,7 @@ h1 {
 
 }
 
+
 .content__wrapper {
   max-width: 1200px;
   width: 90%;
@@ -504,7 +505,6 @@ body.loading-complete .vertical-tabs{
   }
   
 }
-  
 
 .ellipses-container .greeting:after {
   content: "";
@@ -830,6 +830,42 @@ span {
     display: none;
   }
 }
+
+@media (max-width: 768px) {
+  .vertical-tabs {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 1.5rem 0;
+    border-radius: 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    z-index: 999;
+  }
+
+  .vertical-tab-link {
+    font-size: 1rem;
+    padding: 0.5rem;
+    text-align: center;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .vertical-tab-link.active {
+    border-bottom: 3px solid #09383E;
+  }
+
+  /* Optional: Add padding-bottom to body to avoid content hiding behind tabs */
+  body {
+    padding-bottom: 60px;
+  }
+}
+
 
 
 
