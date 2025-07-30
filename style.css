@@ -844,7 +844,7 @@ span {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   .vertical-tabs {
     position: fixed;
     bottom: 0;
@@ -863,26 +863,79 @@ span {
     border-top: 1px solid #eee;
     background-color: #fff;
     gap: 1rem;
+    justify-content: center;
   }
 
   .vertical-tab-link {
-    font-size: 0.9rem;
+    font-size: 0.99rem;
     padding: 0.5rem 1rem;
     white-space: nowrap;
     flex-shrink: 0;
     border: none;
   }
 
-  /* Add bottom spacing to content to prevent overlap */
   .main-content, .content {
     padding-bottom: 100px;
   }
 }
 
+@media (max-width: 768px) {
+  .vertical-tabs {
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 0.5rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+    border-top: 1px solid #eee;
+    background-color: #fff;
+    gap: 0.5rem;
+    justify-content: center;
+  }
 
+  .vertical-tab-link {
+    font-size: 0.577rem;
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+    border: none;
+  }
 
+  .main-content, .content {
+    padding-bottom: 100px;
+  }
 
+    .main-content, .content, .section {
+    padding: 1rem;
+    padding-bottom: 5rem; /* Space for tabs */
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
 
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 8px;
+  }
+
+  h2, h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
 
 
 .footer {
