@@ -93,10 +93,3 @@ function toggleMenu() {
   menu.classList.toggle('active');
 }
 
-document.querySelectorAll('.dropdown > a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const dropdown = link.parentElement;
-    dropdown.classList.toggle('active');
-  });
-});
