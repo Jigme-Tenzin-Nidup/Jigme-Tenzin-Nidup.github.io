@@ -378,7 +378,10 @@ body.loading-complete .vertical-tabs{
   font-size: 26px;
   display: none !important;
   cursor: pointer;
+  z-index: 1001;
 }
+
+
 
 
 @media screen and (max-width:900px) {
@@ -387,23 +390,26 @@ body.loading-complete .vertical-tabs{
   }
 
   .navigation-menu{
-    position: fixed;
     width: 100%;
     max-width: 400px;
     background: #172b4d;
     top: 90px;
     right: 0;
     display: none;
-    padding: 20px 40px;
+    padding: 40px;
     box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
   }
+
+
 
   .navigation-menu::before{
     content: "";
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #172b4d;
-    position: absolute;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    justify-content: center;
     top: -10px;
     right: 10px;
   }
