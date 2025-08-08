@@ -109,7 +109,7 @@ h1 {
 
 .header {
   width: 100%;
-  padding: 4rem 2rem 0 2rem; /* Adjust top/bottom/side padding */
+  padding: 1.5rem 2rem 0 2rem;
   box-sizing: border-box;
 }
 
