@@ -144,70 +144,86 @@
                             </section>
                             <section id="3">
                                 <h2>Einstein's revolutionary consequences</h2>
+                                <br>
                                 <p>
-                                    Wave function for each energy level is determined by the integer value n. Subsequently, the wavefunction also has a corresponding Energy Eigen Value, which is also based on the specific quantized energy level.
-                               <br>
-                               We know:
+                                    Young Albert Einstein was in his patent office, pondering the very conclusion that he would come up with regarding the null result. Einstein is said to have had the eureka moment where he went running to his friend Michele Besso and uttered the line, “Time is suspect”. This realization led to enthralling results, as we shall now see. Time is not absolute, as Newton once believed, but something that depends on motion through space. In other words, time is relative. To cite this, we imagine two people, Dechen and Dorji, each with clocks, perfectly synchronized to each other. Dechen and Dorji both own what is called a light clock as well. A light clock is a setup made of two mirrors separated by a distance d’. In this setup, the light is constant bouncing up and down within the mirror:
+                                
+                                <figure>
+                                    <img src="Img/lightclock.png" alt="">
+                                    <figcaption>Light Clock Setup</figcaption>
+                                </figure>
+
+                                Dorji sets out on a journey to the nearest exoplanet, <b>Alpha Centauri B</b> , about 4 light-years away. To make the trip within his lifetime, he must travel at nearly the speed of light. So, Dorji boards a spaceship while Dechen stays on Earth, waiting eagerly for her friend to return. 
+
+                                <figure>
+                                    <img src="/Img/Dechen and Dorji.png" alt="">
+                                    <figcaption>Dechen remains in position S while Dorji, in position S' is moving away from Dechen in a velocity v </figcaption>
+                                </figure>
+
+                                Now here is where relativity reveals its strangeness. For Dorji, inside his spaceship, he sees the light bouncing normally in a straight direction. His clock ticks as usual, his body functions naturally, and the ship’s machine operates as expected. But for Dechen, watching from Earth, Dorji’s clock appears to tick more slowly. Not only time, but Dorji’s entire biological experience and even the ship itself seem to run in a slower rate. 
+                                <br>
+                                This effect is called Time Dilation; the slowing down of time for an object in motion relative to an observer which isn’t in motion. We can mathematically describe this change in time with the use of simple trigonometry. 
+                                </p>
+                                
+                                <br>
+
+                                <p>
+                            
+                            Take a look at the light clock setup again. In its rest frame (S’) the photon simply travels vertically between the two mirrors. Since the light always moves at speed c, it takes a time T to go from mirror 1 to mirror 2, the distance covered is:
+
+                            \[
+                            d' = cT
+                            \]
+
+                            This is straightforward for Dorji, who is looking a the setup he has in his spaceship. 
+                            <br> <br>
+
+                            However, things look different from the perspective of Dechen, an external observer (S), who sees the entire clock moving with velocity v, In this frame, the photon does not move straight up and down but instead follows a diagonal path. The vertical distance between the mirrors remains d’, but the clock itself has shifted sideways during the time interval T.
+
+                            <figure>
+                                <img src="/Img/Light clock in motion.png" alt="">
+                                <figcaption>
+                                    The same lightclock setup of Dorji from Dechen's perspective as it moves with a constant velocity v
+                                </figcaption>
+                            </figure>
+
+                            Thus, the light travels a longer path in frame S. By the Pythagorean Theorem, the total distance travelled is:
+                             \[
+                             d^2 = (d'')^2 + (d')^2
+                             \]
+                            From the image, we find that: 
                                \[
-                               k = \frac{n\pi}{a}
+                               (ct)^2 = (vt)^2 + (cT)^2 
                                \]
-                               We also know:
+                               
                                \[
-                               k^2 = \frac{2mE}{\hbar^2}
+                               c^2t^2 = v^2t^2 + c^2T^2
                                \]
 
-                               Therefore, by simple rearrangement substitution, we get:
+                               By simple rearrangement substitution, we get:
                                \[
-                               E = \frac{\hbar^2n^2\pi^2}{2ma^2}
+                               (c^2 - v^2)t^2 = c^2T^2
                                \]
+                               \[
+                               t^2 = \frac{c^2}{(c^2-v^2)}T^2
+                               \]
+                               \[
+                               t^2 = \frac{c^2}{c^2(1 - \frac{v^2}{c^2})}
+                               \]
+                               <br>
+                               \[
+                               t = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}T
+                               \]
+
+                               \[
+                                t  = \gamma{T}
+                               \]
+
+                               where \(\gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}}\)
                                 </p>
                             </section>
 
-<section id="Program">
-<h2>Python Code to generate the plot of the wavefunction</h2><br>
-<textarea id="pythonCode">
-import numpy as np
-import matplotlib.pyplot as plt
 
-def particle_in_a_box (n, L, x) :
-    if n <= 0:
-        raise ValueError("Quantum Number (n) must be greater than 0")
-    if L <=0:
-        raise ValueError("Box Length (L) must be greater than 0")
-
-    return np.sqrt(2/L) * np.sin(n * np.pi * x / L)
-
-def plot_wavefunction(n,L):
-    x = np.linspace(0, L, 1000)
-    psi = particle_in_a_box(n,L,x)
-
-    plt.plot(x,psi)
-    plt. xlabel("Position (x)")
-    plt.ylabel("Wavefunction (ψ(x))")
-    plt.title(f"Particle in a Box: n = {n}")
-    plt.grid(True)
-    plt.show()
-
-    plt.plot(x, psi**2)
-    plt.xlabel("Position (x)")
-    plt.ylabel("Probability Distribution Function (|ψ(x)|^2)")
-    plt.title(f"Probability distribution for a Particle in a Box: n = {n}")
-    plt.grid(True)
-    plt.show()
-
-L = 1
-n = 1
-plot_wavefunction(n,L)</textarea>
-
-<figure>
-    <img src="./Img/wavefunction.png" alt="">
-    <figcaption>Wavefunction in the ground state</figcaption>
-</figure>
-<figure>
-    <img src="./Img/probdist.png" alt="">
-    <figcaption>Probability Distribution for a Particle in a Box</figcaption>
-</figure>
-</section>
 <section id="conclusion">
     <h2>Conclusion</h2>
     <p>While 1905 may have been Einstein’s Annus Mirabilis, it was still not his Magnum Opus. Contrary to popular belief, the Special Theory of Relativity was not the reason he received the Nobel Prize. That honour was awarded for his paper on the Photoelectric Effect, which made a groundbreaking contribution to quantum theory. The Special Theory of Relativity itself is incomplete; it describes the motion of bodies moving at constant velocities, but it does not account for the acceleration of gravity. </p>
